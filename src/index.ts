@@ -7,11 +7,11 @@ import './controllers/RootController';
 // Setup
 const app = express();
 
+const port = 3000 || process.env.PORT;
+
 // body-parser is deprecated
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieSession({ keys: ['brandon'] }));
-
-// Router
+app.use(cookieSession({ keys: ['bbbbb'] }));
 app.use(AppRouter.getInstance());
 
 app.listen(3000, () => {

@@ -14,6 +14,7 @@ function requireAuth(req: Request, res: Response, next: NextFunction): void {
 class RootController {
 	@get('/')
 	getRoot(req: Request, res: Response) {
+		console.log('root route is activated');
 		// req.session
 		if (req.session && req.session.loggedIn) {
 			res.send(`
