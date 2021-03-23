@@ -7,7 +7,7 @@
 		"start": "ts-node-dev --transpile-only --no-notify --ignore-watch node_modules src/index.ts"
 	},
 	"keywords": [],
-	"author": "",
+	"author": "Seokhyun Wie",
 	"license": "ISC",
 	"dependencies": {
 		"@types/cookie-session": "^2.0.41",
@@ -16,6 +16,6 @@
 		"express": "^4.17.1",
 		"reflect-metadata": "^0.1.13",
 		"ts-node-dev": "^1.0.0-pre.56",
-		"typescript": "^3.9.7"
+		"typescript": "^4.2.3"
 	}
 }

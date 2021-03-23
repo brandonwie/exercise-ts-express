@@ -4,7 +4,7 @@ import { AppRouter } from '../../AppRouter';
 import { Methods } from './Methods';
 import { MetadataKeys } from './MetadataKeys';
 
-function bodyValidators(keys: string): RequestHandler {
+function bodyValidators(keys: string[]): RequestHandler {
 	return function (req: Request, res: Response, next: NextFunction) {
 		if (!req.body) {
 			res.status(422).send('Invalid request');
@@ -13,7 +13,7 @@ function bodyValidators(keys: string): RequestHandler {
 
 		for (let key of keys) {
 			if (!req.body[key]) {
-				res.status(422).send('Invalid request');
+				res.status(422).send(`Missing property ${key}`);
 				return;
 			}
 		}
