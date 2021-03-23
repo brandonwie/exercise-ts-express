@@ -1,8 +1,9 @@
 import express from 'express';
 import { router } from './routes/loginRoutes';
 import cookieSession from 'cookie-session';
-import { router as controllerRouter } from './controllers/decorators/controller';
-import './controllers/LoginControllers';
+import { AppRouter } from './AppRouter';
+
+import './controllers/LoginController';
 
 // Setup
 const app = express();
@@ -13,7 +14,7 @@ app.use(cookieSession({ keys: ['brandon'] }));
 
 // Routers
 app.use(router);
-app.use(controllerRouter);
+app.use(AppRouter.getInstance());
 
 app.listen(3000, () => {
 	console.log('Server running on port 3000...');

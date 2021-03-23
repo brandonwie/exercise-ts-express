@@ -16,6 +16,7 @@ const router = Router();
 
 router.post('/login', (req: RequestWithBody, res: Response) => {
 	const { email, password } = req.body;
+
 	if (email && password && email === 'hi@hi.com' && password === 'password') {
 		// mark this person as logged in
 		req.session = { loggedIn: true };
